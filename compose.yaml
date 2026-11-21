@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:16
+    container_name: techasset-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: techasset
+      POSTGRES_PASSWORD: techasset
+      POSTGRES_DB: techasset
+    ports:
+      - "5434:5432"
+    volumes:
+      - techasset_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U techasset -d techasset"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  techasset_pgdata:

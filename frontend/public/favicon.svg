@@ -1,0 +1,39 @@
+<svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="favTop" x1="22" y1="5" x2="22" y2="19" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#60A5FA" />
+      <stop offset="1" stop-color="#2563EB" />
+    </linearGradient>
+    <linearGradient id="favLeft" x1="6" y1="14" x2="22" y2="39" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1D4ED8" />
+      <stop offset="1" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="favRight" x1="22" y1="19" x2="38" y2="39" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B82F6" />
+      <stop offset="1" stop-color="#1E3A8A" />
+    </linearGradient>
+    <linearGradient id="favChip" x1="17" y1="17" x2="27" y2="27" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38BDF8" />
+      <stop offset="1" stop-color="#818CF8" />
+    </linearGradient>
+  </defs>
+
+  <!-- Cara superior -->
+  <path d="M22 6L37 14.5L22 23L7 14.5L22 6Z" fill="url(#favTop)" stroke="#93C5FD" stroke-width="1.5" stroke-linejoin="round" />
+  <!-- Cara lateral izquierda -->
+  <path d="M7 14.5V29.5L22 38V23L7 14.5Z" fill="url(#favLeft)" stroke="#60A5FA" stroke-width="1.5" stroke-linejoin="round" />
+  <!-- Cara lateral derecha -->
+  <path d="M22 23V38L37 29.5V14.5L22 23Z" fill="url(#favRight)" stroke="#93C5FD" stroke-width="1.5" stroke-linejoin="round" />
+
+  <!-- Núcleo central del activo -->
+  <circle cx="22" cy="22" r="4.5" fill="url(#favChip)" />
+  <circle cx="22" cy="22" r="2" fill="#FFFFFF" />
+
+  <!-- Micro-conexiones -->
+  <path d="M22 17.5V10" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" />
+  <path d="M18 24.5L12 28" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round" />
+  <path d="M26 24.5L32 28" stroke="#93C5FD" stroke-width="1.5" stroke-linecap="round" />
+
+  <!-- Led de estado operativo verde -->
+  <circle cx="36" cy="36" r="4" fill="#10B981" stroke="#0F172A" stroke-width="2" />
+</svg>

@@ -1,0 +1,274 @@
+@import '@fontsource/nunito-sans/400.css';
+@import '@fontsource/nunito-sans/600.css';
+@import '@fontsource/nunito-sans/700.css';
+@import '@fontsource/nunito-sans/800.css';
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --ink: #0f172a;
+  --paper: #ffffff;
+  --canvas: #f8fafc;
+  --border: #e2e8f0;
+  --border-light: #f1f5f9;
+  --grid: #e2e8f0;
+  --soft: #f1f5f9;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-light: #eff6ff;
+  --note: #eff6ff;
+  --danger: #dc2626;
+  --danger-light: #fef2f2;
+  --success: #059669;
+  --success-light: #ecfdf5;
+  --warning: #d97706;
+  --warning-light: #fffbeb;
+  --info: #0284c7;
+  --info-light: #f0f9ff;
+  --muted: #64748b;
+}
+
+.dark {
+  --ink: #f8fafc;
+  --paper: #111827;
+  --canvas: #0b0f19;
+  --border: #1f2937;
+  --border-light: #1e293b;
+  --grid: #1e293b;
+  --soft: #1e293b;
+  --primary: #3b82f6;
+  --primary-hover: #60a5fa;
+  --primary-light: #1e293b;
+  --note: #1e293b;
+  --danger: #ef4444;
+  --danger-light: #450a0a;
+  --success: #10b981;
+  --success-light: #064e3b;
+  --warning: #f59e0b;
+  --warning-light: #451a03;
+  --info: #38bdf8;
+  --info-light: #082f49;
+  --muted: #94a3b8;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-canvas: var(--canvas);
+  --color-border: var(--border);
+  --color-border-light: var(--border-light);
+  --color-grid: var(--grid);
+  --color-soft: var(--soft);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-light: var(--primary-light);
+  --color-note: var(--note);
+  --color-danger: var(--danger);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-info: var(--info);
+  --color-muted: var(--muted);
+
+  --font-sans: 'Nunito Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-hand: 'Nunito Sans', system-ui, -apple-system, sans-serif;
+
+  --shadow-sketch: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-sketch-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-sketch-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--canvas);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 14.5px;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+
+  ::selection {
+    background: #bfdbfe;
+    color: #1e3a8a;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--muted) transparent;
+  }
+}
+
+@layer components {
+  /* Tarjetas Corporativas */
+  .sketch-card {
+    background-color: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.04);
+  }
+
+  .sketch-card-flat {
+    background-color: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.03);
+  }
+
+  /* Campos de Formulario Empresariales */
+  .sketch-input {
+    width: 100%;
+    height: 2.6rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background-color: var(--paper);
+    padding: 0 0.85rem;
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    outline: none;
+    transition:
+      border-color 150ms ease,
+      box-shadow 150ms ease;
+  }
+
+  .sketch-input::placeholder {
+    color: var(--muted);
+    opacity: 0.75;
+  }
+
+  .sketch-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 18%, transparent);
+  }
+
+  .sketch-input:disabled {
+    background-color: var(--soft);
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  .sketch-input-error {
+    border-color: var(--danger) !important;
+  }
+
+  .sketch-input-error:focus {
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--danger) 18%, transparent) !important;
+  }
+
+  .sketch-textarea {
+    min-height: 6rem;
+    height: auto;
+    padding-top: 0.65rem;
+    padding-bottom: 0.65rem;
+    resize: vertical;
+  }
+
+  .tape {
+    display: none;
+  }
+
+  .note-sticky {
+    background: var(--paper);
+    color: var(--ink);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05);
+  }
+
+  /* Enlaces de Navegación Lateral */
+  .sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 0.6rem 0.85rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--muted);
+    transition: all 140ms ease;
+  }
+
+  .sidebar-link:hover {
+    background-color: var(--soft);
+    color: var(--ink);
+  }
+
+  .sidebar-link-active {
+    background-color: var(--primary-light);
+    color: var(--primary);
+    font-weight: 700;
+    border-color: color-mix(in srgb, var(--primary) 20%, transparent);
+  }
+
+  /* Tablas de Datos Ejecutivas */
+  .table-sketch {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.875rem;
+  }
+
+  .table-sketch thead th {
+    background: var(--soft);
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .table-sketch tbody td {
+    border-bottom: 1px solid var(--border);
+    padding: 0.85rem 1rem;
+    vertical-align: middle;
+  }
+
+  .table-sketch tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .table-sketch tbody tr:hover {
+    background-color: color-mix(in srgb, var(--soft) 50%, transparent);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}

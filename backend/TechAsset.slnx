@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/tests/">
+    <Project Path="tests/TechAsset.UnitTests/TechAsset.UnitTests.csproj" />
+  </Folder>
+  <Project Path="TechAsset.Api/TechAsset.Api.csproj" />
+  <Project Path="TechAsset.Application/TechAsset.Application.csproj" />
+  <Project Path="TechAsset.Domain/TechAsset.Domain.csproj" />
+  <Project Path="TechAsset.Infrastructure/TechAsset.Infrastructure.csproj" />
+</Solution>
